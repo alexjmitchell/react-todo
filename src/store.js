@@ -1,10 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from "redux"
 import thunk from "redux-thunk"
 
-import exampleReducer from "./reducers/exampleReducer"
+import TodoReducer from "./reducers/TodoReducer"
 
 const rootReducer = combineReducers({
-  exampleReducer
+  TodoReducer
 })
 
 const store = createStore(rootReducer, applyMiddleware(thunk))

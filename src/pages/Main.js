@@ -1,11 +1,10 @@
 import React from "react"
 import { useSelector } from "react-redux"
 import "../styles/base.css"
-import Form from '../components/Form'
+import Form from "../components/Form"
 
 export default function(props) {
   const items = useSelector(appState => appState.TodoReducer.items)
-  
 
   console.log("Items ======>> ", items)
   return (
@@ -14,7 +13,7 @@ export default function(props) {
       <Form />
       <ul>
         {items.map((item, i) => (
-          <li key={"item-" + i}>{item}</li>
+          <li key={"item-" + i}>{item.itemName}</li>
         ))}
       </ul>
     </div>

@@ -1,12 +1,16 @@
 {
-  "users": [
+  "items": [
     {
-      "id": 1,
-      "name": "Ryan"
+      "itemName": "apple",
+      "id": 1
     },
     {
-      "name": "Mike",
+      "itemName": "onion",
       "id": 2
+    },
+    {
+      "itemName": "potato",
+      "id": 3
     }
   ]
 }

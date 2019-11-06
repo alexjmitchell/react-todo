@@ -2,15 +2,15 @@ import React, { useEffect } from "react"
 import { useSelector, useDispatch } from "react-redux"
 import "../styles/base.css"
 import Form from "../components/Form"
-import { listItems, deleteItem } from "../actions/Todo-actions"
+import { listItems, deleteItem } from "../store/actions/Todo-actions"
 
-export default function(props) {
-  const items = useSelector(appState => appState.TodoReducer.items)
+export default props => {
+  const items = useSelector(state => state.TodoReducer.items)
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(listItems())
-  })
+  }, [dispatch])
 
   console.log("Items ======>> ", items)
   return (
@@ -20,11 +20,7 @@ export default function(props) {
       <ul>
         {items.map((item, i) => (
           <>
-            <button
-              id={item.id}
-              onSubmit={dispatch(deleteItem(item))}
-              key={"button-" + i}
-            >
+            <button id={item.id} key={"button-" + i}>
               Delete
             </button>
             <li key={"item-" + i}>{item.itemName}</li>

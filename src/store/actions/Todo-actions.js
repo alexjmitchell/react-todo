@@ -11,7 +11,7 @@ export function addItem(item) {
   }
 }
 
-export function listItems() {
+export const listItems = () => {
   return dispatch => {
     axios.get("/items").then(response => {
       dispatch({
@@ -27,8 +27,7 @@ export const deleteItem = item => {
     axios.delete("/items", { item }).then(response => {
       dispatch({
         type: "DELETE_ITEM",
-        payload: response.data,
-        id: item.id
+        payload: response.data
       })
     })
   }

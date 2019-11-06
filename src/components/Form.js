@@ -1,15 +1,19 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
-import { addItem } from "../actions/Todo-actions"
+import { addItem } from "../store/actions/Todo-actions"
 
 export default function(props) {
   const [item, setItem] = useState("")
   const dispatch = useDispatch()
-  
-  function handleSubmit(event) {
+
+  const handleSubmit = event => {
     event.preventDefault()
 
     dispatch(addItem(item))
+  }
+
+  const handleOnChange = event => {
+    setItem(event.target.value)
   }
 
   return (
@@ -19,7 +23,7 @@ export default function(props) {
         name="add-item"
         id="add-item"
         value={item}
-        onChange={event => setItem(event.target.value)}
+        onChange={handleOnChange}
       />
       <button type="submit">Submit</button>
     </form>

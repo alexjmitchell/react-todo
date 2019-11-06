@@ -9,6 +9,10 @@ export default function(state = initialState, action) {
         ...state,
         items: [...state.items, action.payload]
       }
+    case "LIST_ITEMS":
+      return { ...state, items: action.payload }
+    case "DELETE_ITEM":
+      return state.filter(({ id }) => id !== action.payload.id)
     default:
       return state
   }

@@ -21,3 +21,15 @@ export function listItems() {
     })
   }
 }
+
+export const deleteItem = item => {
+  return dispatch => {
+    axios.delete("/items", { item }).then(response => {
+      dispatch({
+        type: "DELETE_ITEM",
+        payload: response.data,
+        id: item.id
+      })
+    })
+  }
+}

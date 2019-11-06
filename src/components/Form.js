@@ -10,6 +10,7 @@ export default function(props) {
     event.preventDefault()
 
     dispatch(addItem(item))
+    setItem("")
   }
 
   const handleOnChange = event => {

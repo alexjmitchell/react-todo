@@ -16,17 +16,23 @@ export default props => {
   return (
     <div className="container">
       <h1>ToDo List</h1>
-      <Form />
-      <ul>
-        {items.map((item, i) => (
-          <>
-            <button id={item.id} key={"button-" + i}>
-              Delete
-            </button>
-            <li key={"item-" + i}>{item.itemName}</li>
-          </>
-        ))}
-      </ul>
+      <main className="todo-list">
+        <Form />
+        <ul>
+          {items.map((item, i) => (
+            <div className="list">
+              <button
+                id={item.id}
+                key={"button-" + i}
+                onClick={event => dispatch(deleteItem(item.id))}
+              >
+                X
+              </button>
+              <li key={"item-" + i}>{item.itemName}</li>
+            </div>
+          ))}
+        </ul>
+      </main>
     </div>
   )
 }

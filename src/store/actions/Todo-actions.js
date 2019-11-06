@@ -22,13 +22,10 @@ export const listItems = () => {
   }
 }
 
-export const deleteItem = item => {
+export const deleteItem = id => {
   return dispatch => {
-    axios.delete("/items", { item }).then(response => {
-      dispatch({
-        type: "DELETE_ITEM",
-        payload: response.data
-      })
+    axios.delete("/items/" + id).then(response => {
+      dispatch(listItems())
     })
   }
 }

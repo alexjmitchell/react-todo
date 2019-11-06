@@ -1,36 +1,24 @@
 {
   "items": [
     {
-      "itemName": "abc",
+      "itemName": "Dishes",
       "id": 1
     },
     {
-      "itemName": "dsafljsdaljf",
+      "itemName": "",
       "id": 2
     },
     {
-      "itemName": "dsafljsdaljf",
+      "itemName": "",
       "id": 3
     },
     {
-      "itemName": "dsafljsdaljf",
+      "itemName": "",
       "id": 4
     },
     {
-      "itemName": "hello boy",
+      "itemName": "",
       "id": 5
-    },
-    {
-      "itemName": "d",
-      "id": 6
-    },
-    {
-      "itemName": "hi",
-      "id": 7
-    },
-    {
-      "itemName": "potato",
-      "id": 8
     }
   ]
 }
